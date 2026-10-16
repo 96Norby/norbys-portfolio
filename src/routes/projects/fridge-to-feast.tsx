@@ -1,1 +1,339 @@
-aW1wb3J0IHsgY3JlYXRlRmlsZVJvdXRlLCBMaW5rIH0gZnJvbSAiQHRhbnN0YWNrL3JlYWN0LXJvdXRlciI7CmltcG9ydCB7IHVzZVN0YXRlIH0gZnJvbSAicmVhY3QiOwoKZXhwb3J0IGNvbnN0IFJvdXRlID0gY3JlYXRlRmlsZVJvdXRlKCIvcHJvamVjdHMvZnJpZGdlLXRvLWZlYXN0IikoewogIGhlYWQ6ICgpID0+ICh7CiAgICBtZXRhOiBbCiAgICAgIHsKICAgICAgICB0aXRsZTogIkZyaWRnZSB0byBGZWFzdCDigJQgTm9yYmVydCBSZXllcyIsCiAgICAgIH0sCiAgICAgIHsKICAgICAgICBuYW1lOiAiZGVzY3JpcHRpb24iLAogICAgICAgIGNvbnRlbnQ6CiAgICAgICAgICAiRnJpZGdlIHRvIEZlYXN0OiB0eXBlIGluIHdoYXQncyBpbiB5b3VyIGZyaWRnZSBhbmQgc2VlIHdoaWNoIFRoYWkgYW5kIEZpbGlwaW5vIGRpc2hlcyB5b3UgY2FuIGNvb2suIEEgc21hbGwgd2ViIGFwcCBieSBOb3JiZXJ0IFJleWVzLiIsCiAgICAgIH0sCiAgICAgIHsKICAgICAgICBwcm9wZXJ0eTogIm9nOnRpdGxlIiwKICAgICAgICBjb250ZW50OiAiRnJpZGdlIHRvIEZlYXN0IOKAlCBOb3JiZXJ0IFJleWVzIiwKICAgICAgfSwKICAgICAgewogICAgICAgIHByb3BlcnR5OiAib2c6ZGVzY3JpcHRpb24iLAogICAgICAgIGNvbnRlbnQ6CiAgICAgICAgICAiVHlwZSBpbiB5b3VyIGZyaWRnZSBjb250ZW50cyBhbmQgZ2V0IG1hdGNoaW5nIFRoYWkgYW5kIEZpbGlwaW5vIHJlY2lwZXMgd2l0aCB0b2RkbGVyLXNhZmV0eSBmbGFncy4iLAogICAgICB9LAogICAgICB7IHByb3BlcnR5OiAib2c6dHlwZSIsIGNvbnRlbnQ6ICJ3ZWJzaXRlIiB9LAogICAgXSwKICB9KSwKICBjb21wb25lbnQ6IEZyaWRnZVRvRmVhc3QsCn0pOwoKdHlwZSBDdWlzaW5lID0gInRoYWkiIHwgImZpbGlwaW5vIjsKCnR5cGUgUmVjaXBlID0gewogIG5hbWU6IHN0cmluZzsKICBjdWlzaW5lOiBDdWlzaW5lOwogIGluZ3JlZGllbnRzOiBzdHJpbmdbXTsKICB0b2RkbGVyU2FmZTogYm9vbGVhbjsKICB0aW1lTWludXRlczogbnVtYmVyOwp9OwoKdHlwZSBNYXRjaFJlc3VsdCA9IHsKICBuYW1lOiBzdHJpbmc7CiAgY3Vpc2luZTogQ3Vpc2luZTsKICBtYXRjaFBlcmNlbnQ6IG51bWJlcjsKICBtaXNzaW5nSW5ncmVkaWVudHM6IHN0cmluZ1tdOwogIHRvZGRsZXJTYWZlOiBib29sZWFuOwogIHRpbWVNaW51dGVzOiBudW1iZXI7Cn07Cgpjb25zdCBSRUNJUEVTOiBSZWNpcGVbXSA9IFsKICB7CiAgICBuYW1lOiAiUGFkIFRoYWkiLAogICAgY3Vpc2luZTogInRoYWkiLAogICAgaW5ncmVkaWVudHM6IFsKICAgICAgInJpY2Ugbm9vZGxlcyIsCiAgICAgICJlZ2dzIiwKICAgICAgInRvZnUiLAogICAgICAicGVhbnV0cyIsCiAgICAgICJiZWFuIHNwcm91dHMiLAogICAgICAiZ2FybGljIiwKICAgICAgImZpc2ggc2F1Y2UiLAogICAgXSwKICAgIHRvZGRsZXJTYWZlOiBmYWxzZSwKICAgIHRpbWVNaW51dGVzOiAyNSwKICB9LAogIHsKICAgIG5hbWU6ICJHcmVlbiBDdXJyeSIsCiAgICBjdWlzaW5lOiAidGhhaSIsCiAgICBpbmdyZWRpZW50czogWwogICAgICAiY29jb251dCBtaWxrIiwKICAgICAgImNoaWNrZW4iLAogICAgICAicmljZSIsCiAgICAgICJjdXJyeSBwYXN0ZSIsCiAgICAgICJmaXNoIHNhdWNlIiwKICAgICAgImJlbGwgcGVwcGVyIiwKICAgICAgIm9uaW9uIiwKICAgIF0sCiAgICB0b2RkbGVyU2FmZTogZmFsc2UsCiAgICB0aW1lTWludXRlczogMzUsCiAgfSwKICB7CiAgICBuYW1lOiAiTWFuZ28gU3RpY2t5IFJpY2UiLAogICAgY3Vpc2luZTogInRoYWkiLAogICAgaW5ncmVkaWVudHM6IFsicmljZSIsICJtYW5nbyIsICJjb2NvbnV0IG1pbGsiLCAic3VnYXIiLCAic2FsdCJdLAogICAgdG9kZGxlclNhZmU6IHRydWUsCiAgICB0aW1lTWludXRlczogMzAsCiAgfSwKICB7CiAgICBuYW1lOiAiVG9tIFl1bSBTb3VwIiwKICAgIGN1aXNpbmU6ICJ0aGFpIiwKICAgIGluZ3JlZGllbnRzOiBbCiAgICAgICJjaGlja2VuIiwKICAgICAgIm11c2hyb29tcyIsCiAgICAgICJsZW1vbmdyYXNzIiwKICAgICAgImZpc2ggc2F1Y2UiLAogICAgICAiY2hpbGkiLAogICAgICAibGltZSIsCiAgICAgICJjaWxhbnRybyIsCiAgICBdLAogICAgdG9kZGxlclNhZmU6IGZhbHNlLAogICAgdGltZU1pbnV0ZXM6IDI1LAogIH0sCiAgewogICAgbmFtZTogIkFkb2JvIiwKICAgIGN1aXNpbmU6ICJmaWxpcGlubyIsCiAgICBpbmdyZWRpZW50czogWyJjaGlja2VuIiwgInNveSBzYXVjZSIsICJ2aW5lZ2FyIiwgImdhcmxpYyIsICJvbmlvbiIsICJyaWNlIl0sCiAgICB0b2RkbGVyU2FmZTogdHJ1ZSwKICAgIHRpbWVNaW51dGVzOiA0MCwKICB9LAogIHsKICAgIG5hbWU6ICJTaW5pZ2FuZyIsCiAgICBjdWlzaW5lOiAiZmlsaXBpbm8iLAogICAgaW5ncmVkaWVudHM6IFsKICAgICAgInBvcmsiLAogICAgICAidGFtYXJpbmQiLAogICAgICAicmljZSIsCiAgICAgICJrYW5na29uZyIsCiAgICAgICJvbmlvbiIsCiAgICAgICJnYXJsaWMiLAogICAgICAicmFkaXNoIiwKICAgIF0sCiAgICB0b2RkbGVyU2FmZTogdHJ1ZSwKICAgIHRpbWVNaW51dGVzOiA1MCwKICB9LAogIHsKICAgIG5hbWU6ICJMdW1waWEiLAogICAgY3Vpc2luZTogImZpbGlwaW5vIiwKICAgIGluZ3JlZGllbnRzOiBbCiAgICAgICJncm91bmQgcG9yayIsCiAgICAgICJjYXJyb3RzIiwKICAgICAgImdhcmxpYyIsCiAgICAgICJzcHJpbmcgcm9sbCB3cmFwcGVycyIsCiAgICAgICJvbmlvbiIsCiAgICBdLAogICAgdG9kZGxlclNhZmU6IHRydWUsCiAgICB0aW1lTWludXRlczogMzUsCiAgfSwKICB7CiAgICBuYW1lOiAiSGFsby1IYWxvIiwKICAgIGN1aXNpbmU6ICJmaWxpcGlubyIsCiAgICBpbmdyZWRpZW50czogWyJzd2VldCBiZWFucyIsICJjb2NvbnV0IG1pbGsiLCAicmljZSIsICJzdWdhciIsICJpY2UiXSwKICAgIHRvZGRsZXJTYWZlOiB0cnVlLAogICAgdGltZU1pbnV0ZXM6IDIwLAogIH0sCl07CgpmdW5jdGlvbiBmaW5kTWF0Y2hlcygKICBmcmlkZ2VJbmdyZWRpZW50czogc3RyaW5nW10sCiAgcmVjaXBlczogUmVjaXBlW10KKTogTWF0Y2hSZXN1bHRbXSB7CiAgY29uc3Qgbm9ybWFsaXplZEZyaWRnZSA9IGZyaWRnZUluZ3JlZGllbnRzLm1hcCgoaW5nKSA9PgogICAgaW5nLnRyaW0oKS50b0xvd2VyQ2FzZSgpCiAgKTsKCiAgY29uc3QgcmVzdWx0czogTWF0Y2hSZXN1bHRbXSA9IHJlY2lwZXMubWFwKChyZWNpcGUpID0+IHsKICAgIGNvbnN0IG1pc3NpbmdJbmdyZWRpZW50cyA9IHJlY2lwZS5pbmdyZWRpZW50cy5maWx0ZXIoCiAgICAgIChpbmdyZWRpZW50KSA9PgogICAgICAgICFub3JtYWxpemVkRnJpZGdlLmluY2x1ZGVzKGluZ3JlZGllbnQudHJpbSgpLnRvTG93ZXJDYXNlKCkpCiAgICApOwogICAgY29uc3QgbWF0Y2hDb3VudCA9IHJlY2lwZS5pbmdyZWRpZW50cy5sZW5ndGggLSBtaXNzaW5nSW5ncmVkaWVudHMubGVuZ3RoOwogICAgY29uc3QgbWF0Y2hQZXJjZW50ID0KICAgICAgcmVjaXBlLmluZ3JlZGllbnRzLmxlbmd0aCA+IDAKICAgICAgICA/IE1hdGgucm91bmQoKG1hdGNoQ291bnQgLyByZWNpcGUuaW5ncmVkaWVudHMubGVuZ3RoKSAqIDEwMCkKICAgICAgICA6IDA7CgogICAgcmV0dXJuIHsKICAgICAgbmFtZTogcmVjaXBlLm5hbWUsCiAgICAgIGN1aXNpbmU6IHJlY2lwZS5jdWlzaW5lLAogICAgICBtYXRjaFBlcmNlbnQsCiAgICAgIG1pc3NpbmdJbmdyZWRpZW50cywKICAgICAgdG9kZGxlclNhZmU6IHJlY2lwZS50b2RkbGVyU2FmZSwKICAgICAgdGltZU1pbnV0ZXM6IHJlY2lwZS50aW1lTWludXRlcywKICAgIH07CiAgfSk7CgogIHJldHVybiByZXN1bHRzLnNvcnQoKGEsIGIpID0+IGIubWF0Y2hQZXJjZW50IC0gYS5tYXRjaFBlcmNlbnQpOwp9CgpmdW5jdGlvbiBSZXN1bHRDYXJkKHsgcmVzdWx0IH06IHsgcmVzdWx0OiBNYXRjaFJlc3VsdCB9KSB7CiAgcmV0dXJuICgKICAgIDxhcnRpY2xlIGNsYXNzTmFtZT0icm91bmRlZC14bCBib3JkZXIgYm9yZGVyLWJvcmRlciBiZy1jYXJkLzYwIHAtNSI+CiAgICAgIDxkaXYgY2xhc3NOYW1lPSJmbGV4IGl0ZW1zLXN0YXJ0IGp1c3RpZnktYmV0d2VlbiBnYXAtMyI+CiAgICAgICAgPGRpdj4KICAgICAgICAgIDxoMyBjbGFzc05hbWU9ImZvbnQtZGlzcGxheSB0ZXh0LWJhc2UgZm9udC1zZW1pYm9sZCB0cmFja2luZy10aWdodCI+CiAgICAgICAgICAgIHtyZXN1bHQubmFtZX0KICAgICAgICAgIDwvaDM+CiAgICAgICAgICA8cCBjbGFzc05hbWU9Im10LTEgZm9udC1tb25vIHRleHQtWzEwcHhdIHVwcGVyY2FzZSB0cmFja2luZy1bMC4xNWVtXSB0ZXh0LW11dGVkLWZvcmVncm91bmQiPgogICAgICAgICAgICB7cmVzdWx0LmN1aXNpbmUgPT09ICJ0aGFpIiA/ICJUaGFpIiA6ICJGaWxpcGlubyJ9IMK3eyIgIn0KICAgICAgICAgICAge3Jlc3VsdC50aW1lTWludXRlc30gbWluCiAgICAgICAgICA8L3A+CiAgICAgICAgPC9kaXY+CiAgICAgICAgPHNwYW4gY2xhc3NOYW1lPSJzaHJpbmstMCByb3VuZGVkLW1kIGJvcmRlciBib3JkZXItYm9yZGVyIHB4LTIgcHktMSBmb250LW1vbm8gdGV4dC14cyBmb250LXNlbWlib2xkIHRleHQtcHJpbWFyeSI+CiAgICAgICAgICB7cmVzdWx0Lm1hdGNoUGVyY2VudH0lCiAgICAgICAgPC9zcGFuPgogICAgICA8L2Rpdj4KICAgICAgPGRpdiBjbGFzc05hbWU9Im10LTMgaC0xLjUgb3ZlcmZsb3ctaGlkZGVuIHJvdW5kZWQtZnVsbCBiZy1tdXRlZCI+CiAgICAgICAgPGRpdgogICAgICAgICAgY2xhc3NOYW1lPSJoLWZ1bGwgcm91bmRlZC1mdWxsIGJnLXByaW1hcnkgdHJhbnNpdGlvbi1hbGwiCiAgICAgICAgICBzdHlsZT17eyB3aWR0aDogYCR7cmVzdWx0Lm1hdGNoUGVyY2VudH0lYCB9fQogICAgICAgIC8+CiAgICAgIDwvZGl2PgogICAgICA8ZGl2IGNsYXNzTmFtZT0ibXQtMyBmbGV4IGZsZXgtd3JhcCBnYXAtMS41Ij4KICAgICAgICB7cmVzdWx0LnRvZGRsZXJTYWZlICYmICgKICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT0icm91bmRlZC1tZCBib3JkZXIgYm9yZGVyLXByaW1hcnkvNDAgYmctcHJpbWFyeS8xMCBweC0yIHB5LTEgZm9udC1tb25vIHRleHQtWzEwcHhdIHRleHQtcHJpbWFyeSI+CiAgICAgICAgICAgIFRvZGRsZXItc2FmZQogICAgICAgICAgPC9zcGFuPgogICAgICAgICl9CiAgICAgICAge3Jlc3VsdC5taXNzaW5nSW5ncmVkaWVudHMubGVuZ3RoID4gMCA/ICgKICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT0icm91bmRlZC1tZCBib3JkZXIgYm9yZGVyLWJvcmRlciBweC0yIHB5LTEgZm9udC1tb25vIHRleHQtWzEwcHhdIHRleHQtbXV0ZWQtZm9yZWdyb3VuZCI+CiAgICAgICAgICAgIE1pc3Npbmc6IHtyZXN1bHQubWlzc2luZ0luZ3JlZGllbnRzLmpvaW4oIiwgIil9CiAgICAgICAgICA8L3NwYW4+CiAgICAgICAgKSA6ICgKICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT0icm91bmRlZC1tZCBib3JkZXIgYm9yZGVyLXByaW1hcnkvNDAgYmctcHJpbWFyeS8xMCBweC0yIHB5LTEgZm9udC1tb25vIHRleHQtWzEwcHhdIHRleHQtcHJpbWFyeSI+CiAgICAgICAgICAgIFlvdSBoYXZlIGV2ZXJ5dGhpbmcKICAgICAgICAgIDwvc3Bhbj4KICAgICAgICApfQogICAgICA8L2Rpdj4KICAgIDwvYXJ0aWNsZT4KICApOwp9CgpmdW5jdGlvbiBGcmlkZ2VUb0ZlYXN0KCkgewogIGNvbnN0IFtpbnB1dCwgc2V0SW5wdXRdID0gdXNlU3RhdGUoIiIpOwogIGNvbnN0IFtyZXN1bHRzLCBzZXRSZXN1bHRzXSA9IHVzZVN0YXRlPE1hdGNoUmVzdWx0W10gfCBudWxsPihudWxsKTsKCiAgY29uc3QgaGFuZGxlQWRkID0gKCkgPT4gewogICAgY29uc3QgaW5ncmVkaWVudHMgPSBpbnB1dAogICAgICAuc3BsaXQoIiwiKQogICAgICAubWFwKChzKSA9PiBzLnRyaW0oKSkKICAgICAgLmZpbHRlcigocykgPT4gcy5sZW5ndGggPiAwKTsKICAgIGlmIChpbmdyZWRpZW50cy5sZW5ndGggPT09IDApIHsKICAgICAgc2V0UmVzdWx0cyhudWxsKTsKICAgICAgcmV0dXJuOwogICAgfQogICAgc2V0UmVzdWx0cyhmaW5kTWF0Y2hlcyhpbmdyZWRpZW50cywgUkVDSVBFUykuc2xpY2UoMCwgNSkpOwogIH07CgogIHJldHVybiAoCiAgICA8ZGl2CiAgICAgIGlkPSJ0b3AiCiAgICAgIGNsYXNzTmFtZT0ibWluLWgtc2NyZWVuIGJnLWJhY2tncm91bmQgZm9udC1zYW5zIHRleHQtZm9yZWdyb3VuZCBhbnRpYWxpYXNlZCIKICAgID4KICAgICAgPGhlYWRlciBjbGFzc05hbWU9InN0aWNreSB0b3AtMCB6LTUwIGJvcmRlci1iIGJvcmRlci1ib3JkZXIgYmctYmFja2dyb3VuZC84MCBiYWNrZHJvcC1ibHVyLW1kIj4KICAgICAgICA8ZGl2IGNsYXNzTmFtZT0ibXgtYXV0byBmbGV4IGgtMTQgdy1mdWxsIG1heC13LTJ4bCBpdGVtcy1jZW50ZXIganVzdGlmeS1iZXR3ZWVuIHB4LTUiPgogICAgICAgICAgPExpbmsKICAgICAgICAgICAgdG89Ii8iCiAgICAgICAgICAgIGNsYXNzTmFtZT0iZm9udC1tb25vIHRleHQtc20gZm9udC1tZWRpdW0gdHJhY2tpbmctdGlnaHQiCiAgICAgICAgICA+CiAgICAgICAgICAgIG5vcmJ5PHNwYW4gY2xhc3NOYW1lPSJ0ZXh0LXByaW1hcnkiPi5jYTwvc3Bhbj4KICAgICAgICAgIDwvTGluaz4KICAgICAgICAgIDxMaW5rCiAgICAgICAgICAgIHRvPSIvIgogICAgICAgICAgICBoYXNoPSJwcm9qZWN0cyIKICAgICAgICAgICAgY2xhc3NOYW1lPSJ0ZXh0LVsxM3B4XSB0ZXh0LW11dGVkLWZvcmVncm91bmQgdHJhbnNpdGlvbi1jb2xvcnMgaG92ZXI6dGV4dC1mb3JlZ3JvdW5kIgogICAgICAgICAgPgogICAgICAgICAgICDihpAgQWxsIHByb2plY3RzCiAgICAgICAgICA8L0xpbms+CiAgICAgICAgPC9kaXY+CiAgICAgIDwvaGVhZGVyPgoKICAgICAgPG1haW4+CiAgICAgICAgPHNlY3Rpb24gY2xhc3NOYW1lPSJyZWxhdGl2ZSBvdmVyZmxvdy1oaWRkZW4iPgogICAgICAgICAgPGRpdgogICAgICAgICAgICBhcmlhLWhpZGRlbj0idHJ1ZSIKICAgICAgICAgICAgY2xhc3NOYW1lPSJoZXJvLWdyaWQgcG9pbnRlci1ldmVudHMtbm9uZSBhYnNvbHV0ZSBpbnNldC0wIgogICAgICAgICAgLz4KICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJyZWxhdGl2ZSBteC1hdXRvIHctZnVsbCBtYXgtdy0yeGwgcHgtNSBweS0xNiI+CiAgICAgICAgICAgIDxwIGNsYXNzTmFtZT0iZm9udC1tb25vIHRleHQteHMgdGV4dC1wcmltYXJ5Ij5QwrcwNDwvcD4KICAgICAgICAgICAgPGgxIGNsYXNzTmFtZT0ibXQtMiBmb250LWRpc3BsYXkgdGV4dC00eGwgZm9udC1ib2xkIHRyYWNraW5nLXRpZ2h0IHNtOnRleHQtNXhsIj4KICAgICAgICAgICAgICBGcmlkZ2UgdG8gRmVhc3QKICAgICAgICAgICAgPC9oMT4KICAgICAgICAgICAgPHAgY2xhc3NOYW1lPSJtdC00IG1heC13LW1kIHRleHQtWzE1cHhdIGxlYWRpbmctcmVsYXhlZCB0ZXh0LW11dGVkLWZvcmVncm91bmQiPgogICAgICAgICAgICAgIFR5cGUgaW4gd2hhdCdzIGluIHlvdXIgZnJpZGdlLCBzZXBhcmF0ZWQgYnkgY29tbWFzLCBhbmQgc2VlCiAgICAgICAgICAgICAgd2hpY2ggVGhhaSBhbmQgRmlsaXBpbm8gZGlzaGVzIHlvdSBjYW4gY29vayByaWdodCBub3cg4oCUIHdpdGgKICAgICAgICAgICAgICB0b2RkbGVyLXNhZmV0eSBmbGFncyBmb3IgZmFtaWx5IG1lYWxzLgogICAgICAgICAgICA8L3A+CgogICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0ibXQtOCByb3VuZGVkLXhsIGJvcmRlciBib3JkZXItYm9yZGVyIGJnLWNhcmQvNjAgcC01Ij4KICAgICAgICAgICAgICA8bGFiZWwKICAgICAgICAgICAgICAgIGh0bWxGb3I9ImluZ3JlZGllbnRzIgogICAgICAgICAgICAgICAgY2xhc3NOYW1lPSJmb250LW1vbm8gdGV4dC1bMTFweF0gdXBwZXJjYXNlIHRyYWNraW5nLVswLjE1ZW1dIHRleHQtbXV0ZWQtZm9yZWdyb3VuZCIKICAgICAgICAgICAgICA+CiAgICAgICAgICAgICAgICBGcmlkZ2UgY29udGVudHMKICAgICAgICAgICAgICA8L2xhYmVsPgogICAgICAgICAgICAgIDx0ZXh0YXJlYQogICAgICAgICAgICAgICAgaWQ9ImluZ3JlZGllbnRzIgogICAgICAgICAgICAgICAgdmFsdWU9e2lucHV0fQogICAgICAgICAgICAgICAgb25DaGFuZ2U9eyhlKSA9PiBzZXRJbnB1dChlLnRhcmdldC52YWx1ZSl9CiAgICAgICAgICAgICAgICBwbGFjZWhvbGRlcj0iZS5nLiBjaGlja2VuLCByaWNlLCBjb2NvbnV0IG1pbGsiCiAgICAgICAgICAgICAgICByb3dzPXszfQogICAgICAgICAgICAgICAgY2xhc3NOYW1lPSJtdC0yIHctZnVsbCByb3VuZGVkLWxnIGJvcmRlciBib3JkZXItaW5wdXQgYmctYmFja2dyb3VuZCBweC0zIHB5LTIuNSB0ZXh0LXNtIHRleHQtZm9yZWdyb3VuZCBwbGFjZWhvbGRlcjp0ZXh0LW11dGVkLWZvcmVncm91bmQvNjAgZm9jdXM6b3V0bGluZS1ub25lIGZvY3VzOnJpbmctMiBmb2N1czpyaW5nLXJpbmciCiAgICAgICAgICAgICAgLz4KICAgICAgICAgICAgICA8YnV0dG9uCiAgICAgICAgICAgICAgICB0eXBlPSJidXR0b24iCiAgICAgICAgICAgICAgICBvbkNsaWNrPXtoYW5kbGVBZGR9CiAgICAgICAgICAgICAgICBjbGFzc05hbWU9Im10LTMgaW5saW5lLWZsZXggaXRlbXMtY2VudGVyIGp1c3RpZnktY2VudGVyIHJvdW5kZWQtbGcgYmctcHJpbWFyeSBweC02IHB5LTMgdGV4dC1zbSBmb250LXNlbWlib2xkIHRleHQtcHJpbWFyeS1mb3JlZ3JvdW5kIHRyYW5zaXRpb24tdHJhbnNmb3JtIGR1cmF0aW9uLTIwMCBob3ZlcjotdHJhbnNsYXRlLXktMC41IgogICAgICAgICAgICAgID4KICAgICAgICAgICAgICAgIEZpbmQgZGlzaGVzCiAgICAgICAgICAgICAgPC9idXR0b24+CiAgICAgICAgICAgIDwvZGl2PgoKICAgICAgICAgICAge3Jlc3VsdHMgIT09IG51bGwgJiYgKAogICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJtdC04Ij4KICAgICAgICAgICAgICAgIHtyZXN1bHRzLmxlbmd0aCA+IDAgPyAoCiAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJncmlkIGdhcC0zIj4KICAgICAgICAgICAgICAgICAgICB7cmVzdWx0cy5tYXAoKHJlc3VsdCkgPT4gKAogICAgICAgICAgICAgICAgICAgICAgPFJlc3VsdENhcmQga2V5PXtyZXN1bHQubmFtZX0gcmVzdWx0PXtyZXN1bHR9IC8+CiAgICAgICAgICAgICAgICAgICAgKSl9CiAgICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAgICAgKSA6ICgKICAgICAgICAgICAgICAgICAgPHAgY2xhc3NOYW1lPSJ0ZXh0LXNtIHRleHQtbXV0ZWQtZm9yZWdyb3VuZCI+CiAgICAgICAgICAgICAgICAgICAgTm8gbWF0Y2hlcyB5ZXQg4oCUIHRyeSBhZGRpbmcgYSBmZXcgbW9yZSBpbmdyZWRpZW50cy4KICAgICAgICAgICAgICAgICAgPC9wPgogICAgICAgICAgICAgICAgKX0KICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgKX0KCiAgICAgICAgICAgIDxwIGNsYXNzTmFtZT0ibXQtMTAgZm9udC1tb25vIHRleHQtWzExcHhdIGxlYWRpbmctcmVsYXhlZCB0ZXh0LW11dGVkLWZvcmVncm91bmQvNzAiPgogICAgICAgICAgICAgIDggZGlzaGVzIMK3IFRoYWkgJmFtcDsgRmlsaXBpbm8gwrcgTWlsZXN0b25lIDEgb2YgdGhlIGJ1aWxkCiAgICAgICAgICAgIDwvcD4KICAgICAgICAgIDwvZGl2PgogICAgICAgIDwvc2VjdGlvbj4KICAgICAgPC9tYWluPgoKICAgICAgPGZvb3RlciBjbGFzc05hbWU9ImJvcmRlci10IGJvcmRlci1ib3JkZXIiPgogICAgICAgIDxkaXYgY2xhc3NOYW1lPSJteC1hdXRvIGZsZXggdy1mdWxsIG1heC13LTJ4bCBpdGVtcy1jZW50ZXIganVzdGlmeS1iZXR3ZWVuIHB4LTUgcHktNiI+CiAgICAgICAgICA8cCBjbGFzc05hbWU9ImZvbnQtbW9ubyB0ZXh0LVsxMXB4XSB0ZXh0LW11dGVkLWZvcmVncm91bmQiPgogICAgICAgICAgICDCqSAyMDI2IE5vcmJlcnQgUmV5ZXMgwrcgbm9yYnkuY2EKICAgICAgICAgIDwvcD4KICAgICAgICAgIDxhCiAgICAgICAgICAgIGhyZWY9IiN0b3AiCiAgICAgICAgICAgIGNsYXNzTmFtZT0iZm9udC1tb25vIHRleHQtWzExcHhdIHRleHQtcHJpbWFyeSB0cmFuc2l0aW9uLWNvbG9ycyBob3Zlcjp0ZXh0LWZvcmVncm91bmQiCiAgICAgICAgICA+CiAgICAgICAgICAgIFRPUCDihpEKICAgICAgICAgIDwvYT4KICAgICAgICA8L2Rpdj4KICAgICAgPC9mb290ZXI+CiAgICA8L2Rpdj4KICApOwp9Cg==
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { useState } from "react";
+
+export const Route = createFileRoute("/projects/fridge-to-feast")({
+  head: () => ({
+    meta: [
+      {
+        title: "Fridge to Feast — Norbert Reyes",
+      },
+      {
+        name: "description",
+        content:
+          "Fridge to Feast: type in what's in your fridge and see which Thai and Filipino dishes you can cook. A small web app by Norbert Reyes.",
+      },
+      {
+        property: "og:title",
+        content: "Fridge to Feast — Norbert Reyes",
+      },
+      {
+        property: "og:description",
+        content:
+          "Type in your fridge contents and get matching Thai and Filipino recipes with toddler-safety flags.",
+      },
+      { property: "og:type", content: "website" },
+    ],
+  }),
+  component: FridgeToFeast,
+});
+
+type Cuisine = "thai" | "filipino";
+
+type Recipe = {
+  name: string;
+  cuisine: Cuisine;
+  ingredients: string[];
+  toddlerSafe: boolean;
+  timeMinutes: number;
+};
+
+type MatchResult = {
+  name: string;
+  cuisine: Cuisine;
+  matchPercent: number;
+  missingIngredients: string[];
+  toddlerSafe: boolean;
+  timeMinutes: number;
+};
+
+const RECIPES: Recipe[] = [
+  {
+    name: "Pad Thai",
+    cuisine: "thai",
+    ingredients: [
+      "rice noodles",
+      "eggs",
+      "tofu",
+      "peanuts",
+      "bean sprouts",
+      "garlic",
+      "fish sauce",
+    ],
+    toddlerSafe: false,
+    timeMinutes: 25,
+  },
+  {
+    name: "Green Curry",
+    cuisine: "thai",
+    ingredients: [
+      "coconut milk",
+      "chicken",
+      "rice",
+      "curry paste",
+      "fish sauce",
+      "bell pepper",
+      "onion",
+    ],
+    toddlerSafe: false,
+    timeMinutes: 35,
+  },
+  {
+    name: "Mango Sticky Rice",
+    cuisine: "thai",
+    ingredients: ["rice", "mango", "coconut milk", "sugar", "salt"],
+    toddlerSafe: true,
+    timeMinutes: 30,
+  },
+  {
+    name: "Tom Yum Soup",
+    cuisine: "thai",
+    ingredients: [
+      "chicken",
+      "mushrooms",
+      "lemongrass",
+      "fish sauce",
+      "chili",
+      "lime",
+      "cilantro",
+    ],
+    toddlerSafe: false,
+    timeMinutes: 25,
+  },
+  {
+    name: "Adobo",
+    cuisine: "filipino",
+    ingredients: ["chicken", "soy sauce", "vinegar", "garlic", "onion", "rice"],
+    toddlerSafe: true,
+    timeMinutes: 40,
+  },
+  {
+    name: "Sinigang",
+    cuisine: "filipino",
+    ingredients: [
+      "pork",
+      "tamarind",
+      "rice",
+      "kangkong",
+      "onion",
+      "garlic",
+      "radish",
+    ],
+    toddlerSafe: true,
+    timeMinutes: 50,
+  },
+  {
+    name: "Lumpia",
+    cuisine: "filipino",
+    ingredients: [
+      "ground pork",
+      "carrots",
+      "garlic",
+      "spring roll wrappers",
+      "onion",
+    ],
+    toddlerSafe: true,
+    timeMinutes: 35,
+  },
+  {
+    name: "Halo-Halo",
+    cuisine: "filipino",
+    ingredients: ["sweet beans", "coconut milk", "rice", "sugar", "ice"],
+    toddlerSafe: true,
+    timeMinutes: 20,
+  },
+];
+
+function findMatches(
+  fridgeIngredients: string[],
+  recipes: Recipe[]
+): MatchResult[] {
+  const normalizedFridge = fridgeIngredients.map((ing) =>
+    ing.trim().toLowerCase()
+  );
+
+  const results: MatchResult[] = recipes.map((recipe) => {
+    const missingIngredients = recipe.ingredients.filter(
+      (ingredient) =>
+        !normalizedFridge.includes(ingredient.trim().toLowerCase())
+    );
+    const matchCount = recipe.ingredients.length - missingIngredients.length;
+    const matchPercent =
+      recipe.ingredients.length > 0
+        ? Math.round((matchCount / recipe.ingredients.length) * 100)
+        : 0;
+
+    return {
+      name: recipe.name,
+      cuisine: recipe.cuisine,
+      matchPercent,
+      missingIngredients,
+      toddlerSafe: recipe.toddlerSafe,
+      timeMinutes: recipe.timeMinutes,
+    };
+  });
+
+  return results.sort((a, b) => b.matchPercent - a.matchPercent);
+}
+
+function ResultCard({ result }: { result: MatchResult }) {
+  return (
+    <article className="rounded-xl border border-border bg-card/60 p-5">
+      <div className="flex items-start justify-between gap-3">
+        <div>
+          <h3 className="font-display text-base font-semibold tracking-tight">
+            {result.name}
+          </h3>
+          <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.15em] text-muted-foreground">
+            {result.cuisine === "thai" ? "Thai" : "Filipino"} ·{" "}
+            {result.timeMinutes} min
+          </p>
+        </div>
+        <span className="shrink-0 rounded-md border border-border px-2 py-1 font-mono text-xs font-semibold text-primary">
+          {result.matchPercent}%
+        </span>
+      </div>
+      <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-muted">
+        <div
+          className="h-full rounded-full bg-primary transition-all"
+          style={{ width: `${result.matchPercent}%` }}
+        />
+      </div>
+      <div className="mt-3 flex flex-wrap gap-1.5">
+        {result.toddlerSafe && (
+          <span className="rounded-md border border-primary/40 bg-primary/10 px-2 py-1 font-mono text-[10px] text-primary">
+            Toddler-safe
+          </span>
+        )}
+        {result.missingIngredients.length > 0 ? (
+          <span className="rounded-md border border-border px-2 py-1 font-mono text-[10px] text-muted-foreground">
+            Missing: {result.missingIngredients.join(", ")}
+          </span>
+        ) : (
+          <span className="rounded-md border border-primary/40 bg-primary/10 px-2 py-1 font-mono text-[10px] text-primary">
+            You have everything
+          </span>
+        )}
+      </div>
+    </article>
+  );
+}
+
+function FridgeToFeast() {
+  const [input, setInput] = useState("");
+  const [results, setResults] = useState<MatchResult[] | null>(null);
+
+  const handleAdd = () => {
+    const ingredients = input
+      .split(",")
+      .map((s) => s.trim())
+      .filter((s) => s.length > 0);
+    if (ingredients.length === 0) {
+      setResults(null);
+      return;
+    }
+    setResults(findMatches(ingredients, RECIPES).slice(0, 5));
+  };
+
+  return (
+    <div
+      id="top"
+      className="min-h-screen bg-background font-sans text-foreground antialiased"
+    >
+      <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
+        <div className="mx-auto flex h-14 w-full max-w-2xl items-center justify-between px-5">
+          <Link
+            to="/"
+            className="font-mono text-sm font-medium tracking-tight"
+          >
+            norby<span className="text-primary">.ca</span>
+          </Link>
+          <Link
+            to="/"
+            hash="projects"
+            className="text-[13px] text-muted-foreground transition-colors hover:text-foreground"
+          >
+            ← All projects
+          </Link>
+        </div>
+      </header>
+
+      <main>
+        <section className="relative overflow-hidden">
+          <div
+            aria-hidden="true"
+            className="hero-grid pointer-events-none absolute inset-0"
+          />
+          <div className="relative mx-auto w-full max-w-2xl px-5 py-16">
+            <p className="font-mono text-xs text-primary">P·04</p>
+            <h1 className="mt-2 font-display text-4xl font-bold tracking-tight sm:text-5xl">
+              Fridge to Feast
+            </h1>
+            <p className="mt-4 max-w-md text-[15px] leading-relaxed text-muted-foreground">
+              Type in what's in your fridge, separated by commas, and see
+              which Thai and Filipino dishes you can cook right now — with
+              toddler-safety flags for family meals.
+            </p>
+
+            <div className="mt-8 rounded-xl border border-border bg-card/60 p-5">
+              <label
+                htmlFor="ingredients"
+                className="font-mono text-[11px] uppercase tracking-[0.15em] text-muted-foreground"
+              >
+                Fridge contents
+              </label>
+              <textarea
+                id="ingredients"
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                placeholder="e.g. chicken, rice, coconut milk"
+                rows={3}
+                className="mt-2 w-full rounded-lg border border-input bg-background px-3 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-2 focus:ring-ring"
+              />
+              <button
+                type="button"
+                onClick={handleAdd}
+                className="mt-3 inline-flex items-center justify-center rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-transform duration-200 hover:-translate-y-0.5"
+              >
+                Find dishes
+              </button>
+            </div>
+
+            {results !== null && (
+              <div className="mt-8">
+                {results.length > 0 ? (
+                  <div className="grid gap-3">
+                    {results.map((result) => (
+                      <ResultCard key={result.name} result={result} />
+                    ))}
+                  </div>
+                ) : (
+                  <p className="text-sm text-muted-foreground">
+                    No matches yet — try adding a few more ingredients.
+                  </p>
+                )}
+              </div>
+            )}
+
+            <p className="mt-10 font-mono text-[11px] leading-relaxed text-muted-foreground/70">
+              8 dishes · Thai &amp; Filipino · Milestone 1 of the build
+            </p>
+          </div>
+        </section>
+      </main>
+
+      <footer className="border-t border-border">
+        <div className="mx-auto flex w-full max-w-2xl items-center justify-between px-5 py-6">
+          <p className="font-mono text-[11px] text-muted-foreground">
+            © 2026 Norbert Reyes · norby.ca
+          </p>
+          <a
+            href="#top"
+            className="font-mono text-[11px] text-primary transition-colors hover:text-foreground"
+          >
+            TOP ↑
+          </a>
+        </div>
+      </footer>
+    </div>
+  );
+}
