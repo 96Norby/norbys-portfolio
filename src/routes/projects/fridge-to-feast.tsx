@@ -254,7 +254,6 @@ function FridgeToFeast() {
     e: React.ChangeEvent<HTMLInputElement>
   ) => {
     const file = e.target.files?.[0];
-    console.log("DEBUG upload handler", file?.name, file?.type);
     if (!file) return;
 
     if (!file.type.startsWith("image/")) {
