@@ -276,16 +276,12 @@ function FridgeToFeast() {
         ? currentInput + "\n" + detectedItems.join("\n")
         : detectedItems.join("\n");
 
-      setInputTextAppend(newList);
+      setInput(newList);
       setIsProcessing(false);
     } catch {
       setError("Failed to process photo. Please try again.");
       setIsProcessing(false);
     }
-  };
-
-  const setInputTextAppend = (value: string) => {
-    setInput(value);
   };
 
   return (
