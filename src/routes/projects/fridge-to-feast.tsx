@@ -223,20 +223,132 @@ function ResultCard({ result }: { result: MatchResult }) {
   );
 }
 
-// Milestone 2: simulated vision detection (a real vision API will be wired in later)
-const SIMULATED_DETECTION = [
-  "chicken breast ~300g",
-  "coconut milk ~1 can",
-  "onion ~1 whole",
-  "garlic ~2 cloves",
-  "rice ~500g",
-];
+// Milestone 2: real vision detection via the Gemini API.
+// The visitor's own API key is used (stored only in their browser) —
+// this static site has no backend to keep a key secret on.
+const API_KEY_STORAGE = "fridge-to-feast-gemini-key";
+
+// Downscale a photo before sending it — keeps uploads fast and costs low.
+function fileToBase64(
+  file: File
+): Promise<{ data: string; mimeType: string }> {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    const url = URL.createObjectURL(file);
+    img.onload = () => {
+      URL.revokeObjectURL(url);
+      const maxDim = 1024;
+      const scale = Math.min(1, maxDim / Math.max(img.width, img.height));
+      const canvas = document.createElement("canvas");
+      canvas.width = Math.round(img.width * scale);
+      canvas.height = Math.round(img.height * scale);
+      const ctx = canvas.getContext("2d");
+      if (!ctx) {
+        reject(new Error("Could not process the photo."));
+        return;
+      }
+      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+      const dataUrl = canvas.toDataURL("image/jpeg", 0.8);
+      resolve({ data: dataUrl.split(",")[1], mimeType: "image/jpeg" });
+    };
+    img.onerror = () => {
+      URL.revokeObjectURL(url);
+      reject(new Error("Could not read that photo file."));
+    };
+    img.src = url;
+  });
+}
+
+// Ask Gemini Vision for every food item in the photo, with portions.
+async function detectIngredients(
+  apiKey: string,
+  image: { data: string; mimeType: string }
+): Promise<string[]> {
+  const prompt =
+    "List every food item visible in this photo of a fridge or pantry — " +
+    "proteins, vegetables, condiments, spices, everything. For each item, " +
+    "give the food name and an estimated portion (for example ~300g, ~1 can, x6). " +
+    'Respond ONLY with a JSON array like [{"item":"chicken breast","portion":"~300g"}]. ' +
+    "If no food is visible, respond with [].";
+
+  const res = await fetch(
+    "https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "x-goog-api-key": apiKey,
+      },
+      body: JSON.stringify({
+        contents: [
+          {
+            parts: [
+              { text: prompt },
+              {
+                inline_data: { mime_type: image.mimeType, data: image.data },
+              },
+            ],
+          },
+        ],
+      }),
+    }
+  );
+
+  if (!res.ok) {
+    if (res.status === 400 || res.status === 403) {
+      throw new Error(
+        "The vision API rejected the request — check that the API key below is valid."
+      );
+    }
+    if (res.status === 402) {
+      throw new Error(
+        "The vision API says payment is required — the API balance may be empty."
+      );
+    }
+    throw new Error(`The vision API returned an error (${res.status}).`);
+  }
+
+  const json = await res.json();
+  const text: string =
+    json?.candidates?.[0]?.content?.parts
+      ?.map((p: { text?: string }) => p.text ?? "")
+      .join("") ?? "";
+
+  const match = text.match(/\[[\s\S]*\]/);
+  if (!match) {
+    throw new Error("Couldn't read any ingredients from that photo.");
+  }
+
+  const parsed: Array<{ item?: string; portion?: string }> = JSON.parse(
+    match[0]
+  );
+  return parsed
+    .filter((d) => typeof d.item === "string" && d.item.trim().length > 0)
+    .map((d) =>
+      d.portion ? `${d.item!.trim()} ${d.portion.trim()}` : d.item!.trim()
+    );
+}
 
 function FridgeToFeast() {
   const [input, setInput] = useState("");
   const [results, setResults] = useState<MatchResult[] | null>(null);
   const [isProcessing, setIsProcessing] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [apiKey, setApiKey] = useState<string>(
+    () =>
+      (typeof window !== "undefined" &&
+        window.localStorage.getItem(API_KEY_STORAGE)) ||
+      ""
+  );
+
+  const saveApiKey = (value: string) => {
+    setApiKey(value);
+    try {
+      window.localStorage.setItem(API_KEY_STORAGE, value);
+    } catch {
+      // localStorage unavailable — the key just won't persist between visits.
+    }
+  };
 
   const handleAdd = () => {
     const ingredients = input
@@ -261,14 +373,26 @@ function FridgeToFeast() {
       return;
     }
 
+    if (!apiKey.trim()) {
+      setError(
+        "Add your Gemini API key in the field below first — photo detection runs on your own key, stored only in this browser."
+      );
+      return;
+    }
+
     setIsProcessing(true);
     setError(null);
 
-    // Simulated vision processing delay — a real vision API will be wired in later
+    // Real vision call: photo → Gemini → detected items with portions
     try {
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+      const image = await fileToBase64(file);
+      const detectedItems = await detectIngredients(apiKey.trim(), image);
 
-      const detectedItems = SIMULATED_DETECTION;
+      if (detectedItems.length === 0) {
+        setError("No food spotted in that photo — try a closer, brighter shot.");
+        setIsProcessing(false);
+        return;
+      }
 
       // Append, never replace, what the user already typed
       const currentInput = input.trim();
@@ -278,8 +402,12 @@ function FridgeToFeast() {
 
       setInput(newList);
       setIsProcessing(false);
-    } catch {
-      setError("Failed to process photo. Please try again.");
+    } catch (err) {
+      setError(
+        err instanceof Error
+          ? err.message
+          : "Failed to process photo. Please try again."
+      );
       setIsProcessing(false);
     }
   };
@@ -375,6 +503,27 @@ function FridgeToFeast() {
                   Find dishes
                 </button>
               </div>
+              <div className="mt-5 border-t border-border pt-4">
+                <label
+                  htmlFor="vision-key"
+                  className="font-mono text-[11px] uppercase tracking-[0.15em] text-muted-foreground"
+                >
+                  Gemini API key (for photo detection)
+                </label>
+                <input
+                  id="vision-key"
+                  type="password"
+                  value={apiKey}
+                  onChange={(e) => saveApiKey(e.target.value)}
+                  placeholder="Paste your Gemini API key — kept only in this browser"
+                  className="mt-2 w-full rounded-lg border border-input bg-background px-3 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-2 focus:ring-ring"
+                />
+                <p className="mt-2 font-mono text-[10px] leading-relaxed text-muted-foreground/70">
+                  Photo detection uses your own Gemini key, stored only in
+                  this browser and sent only to Google's API. Typing
+                  ingredients by hand always works without a key.
+                </p>
+              </div>
             </div>
 
             {error && (
@@ -407,7 +556,7 @@ function FridgeToFeast() {
 
             <p className="mt-10 font-mono text-[11px] leading-relaxed text-muted-foreground/70">
               8 dishes · Thai &amp; Filipino · Milestone 2: photo input
-              (append) — vision detection simulated for now
+              (append) — real Gemini vision detection
             </p>
           </div>
         </section>
